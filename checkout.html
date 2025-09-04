@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donation Payment | Total Giving</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Disabled button style */
+    #confirmPaid:disabled {
+      background-color: #a0a0a0 !important;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Total <span>Giving</span></a>
+  </header>
+
+  <main class="page narrow">
+    <div class="page-heading">
+      <div class="eyebrow" id="checkoutEyebrow">PAYMENT</div>
+      <h1 id="checkoutTitle">Donation payment</h1>
+      <p id="checkoutSubtitle"></p>
+    </div>
+
+    <div class="details-card" id="paymentDetails"></div>
+
+    <label class="amount-label" for="amount">
+      Donation amount <span>(Min: $20)</span>
+      <input 
+        id="amount" 
+        type="number" 
+        min="20" 
+        step="0.01" 
+        placeholder="Enter amount" 
+        required
+      >
+    </label>
+
+    <!-- Countdown text -->
+    <p id="countdownText" style="text-align:center; margin: 12px 0; font-weight:600; color:#666;">
+      <span id="timer">1:00</span> 
+    </p>
+
+    <button class="btn primary full" id="confirmPaid" type="button" disabled>
+      I Confirm I Have Paid
+    </button>
+
+    <a class="back-link" href="payment.html">← Back</a>
+  </main>
+
+  <div class="loader-overlay" id="loader">
+    <div class="spinner"></div>
+    <h2>Processing your donation</h2>
+    <p>Please wait...</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
